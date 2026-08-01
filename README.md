@@ -15,5 +15,6 @@ Acesse `http://localhost:8080`.
 - **WASD** ou **setas**: caminhar
 - **E**: interagir com objetos próximos
 - **Enter** / clique: avançar diálogos
+- Em celulares, use os botões exibidos na tela.
 
-Explore a cidade de Verade, encontre o espelho, desperte o Núcleo Azul e escolha se continuará além da simulação.
+Explore a cidade de Verade, encontre o espelho, reúna os três Ecos Azuis, desperte o Núcleo Azul e escolha se continuará além da simulação. A documentação das mecânicas está em [`docs/MECANICAS.md`](docs/MECANICAS.md).
