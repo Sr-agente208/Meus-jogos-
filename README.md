@@ -19,8 +19,9 @@ Abra `http://localhost:8080`.
 | Movimento | `WASD` ou setas | botões ← e → |
 | Interação | `E` | botão E |
 | Avançar diálogo | `Enter` ou clique | botão na tela |
+| Pausa e opções | `Esc` ou botão PAUSA | botão PAUSA |
 
-O prólogo conduz o jogador pela cidade de Verade: espelho `0x7` → três Ecos Azuis → Núcleo Azul → Protocolo Espelho. Consulte [`docs/MECANICAS.md`](docs/MECANICAS.md) para detalhes da versão implementada.
+O progresso e as opções do protótipo são salvos localmente no navegador. O prólogo conduz o jogador pela cidade de Verade: espelho `0x7` → três Ecos Azuis → Núcleo Azul → Protocolo Espelho. Consulte [`docs/MECANICAS.md`](docs/MECANICAS.md) para detalhes da versão implementada.
 
 ## Documentação do projeto
 

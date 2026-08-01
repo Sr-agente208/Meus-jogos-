@@ -22,5 +22,7 @@
 - **Ecos**: colecionáveis necessários para liberar o Núcleo Azul.
 - **Eventos de interface**: mensagens aleatórias do sistema e efeitos glitch.
 - **Final ramificado**: aceitar ou recusar o Protocolo Espelho altera a mensagem final.
+- **Pausa e configurações**: `Esc` ou o botão PAUSA abre o menu para continuar, ajustar brilho/volume, salvar ou apagar o save local.
+- **Save versionado**: marcos narrativos, Ecos, posição, corrupção e preferências são salvos no `localStorage` do navegador por `src/systems/saveManager.js`. O jogo recupera uma sessão compatível ao iniciar.
 
-O protótipo não grava informações do usuário, não usa microfone e não manipula arquivos ou configurações do dispositivo.
+O protótipo não envia nem grava informações fora do navegador, não usa microfone e não manipula arquivos ou configurações do dispositivo.

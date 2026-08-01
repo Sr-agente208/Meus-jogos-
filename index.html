@@ -22,6 +22,7 @@
     <section id="play" class="screen">
       <header class="hud">
         <div class="brand">AGM<span>//</span> VERADE</div>
+        <button id="pause-button" class="pause-button" aria-label="Pausar jogo">Ⅱ PAUSA</button>
         <div class="meters"><div class="meter-label">C.O.R. <b id="cor-text">08%</b></div><div class="bar"><i id="cor-bar"></i></div></div>
         <div class="bpm"><b id="bpm">067</b><small>BPM</small></div>
       </header>
@@ -43,10 +44,12 @@
       <div class="touch-controls" aria-label="Controles de toque"><button data-move="-3">←</button><button data-action="interact">E</button><button data-move="3">→</button></div>
     </section>
 
+    <section id="pause" class="overlay"><div class="pause-box"><p class="speaker">SISTEMA // SESSÃO PAUSADA</p><h2>PAUSA</h2><button id="resume" class="primary">CONTINUAR</button><button id="save-game" class="secondary">SALVAR PROGRESSO</button><button id="toggle-settings" class="secondary">CONFIGURAÇÕES</button><div id="settings" class="settings hidden"><label>BRILHO <input id="brightness" type="range" min="65" max="130" value="100"><output id="brightness-output">100%</output></label><label>VOLUME <input id="volume" type="range" min="0" max="100" value="35"><output id="volume-output">35%</output></label><p>As opções e o progresso são guardados neste navegador.</p></div><button id="reset-save" class="text-button">APAGAR SAVE LOCAL</button><p id="save-feedback" class="save-feedback"></p></div></section>
     <section id="dialogue" class="overlay"><div class="dialogue-box"><p class="speaker" id="speaker">SISTEMA</p><p id="line"></p><button id="next">CONTINUAR <b>↵</b></button></div></section>
     <section id="choice" class="overlay"><div class="choice-box"><p class="speaker">PROTOCOLO ESPELHO</p><h2>CONTINUAR ALÉM<br>DA SIMULAÇÃO?</h2><button data-answer="accept" class="primary">ACEITAR</button><button data-answer="refuse" class="secondary">RECUSAR</button></div></section>
     <section id="ending" class="screen"><div class="ending-content"><div class="gold-eye"></div><p class="eyebrow">TRANSMISSÃO DESCONHECIDA</p><h2>ELE ABRIU<br>A PORTA.</h2><p id="ending-text">O azul acordou. Mas algo mais veio junto.</p><div class="zeral">ZERAL_<em>//</em></div><button id="restart" class="secondary">REINICIAR ARQUIVO</button></div></section>
   </main>
+  <script src="src/systems/saveManager.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
