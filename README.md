@@ -1,20 +1,51 @@
-# ALGORTHOMUS.EXE — O Eco Azul
+# 🎮 Meus-jogos-
 
-Protótipo web jogável de terror narrativo inspirado no conceito de **Mundo Torajo / Algorithomus**. Este é um projeto de fã, não oficial.
+> Hub para projetos, protótipos, ideias e documentação de desenvolvimento de jogos.
 
-## Como jogar
+## Mundo Torajo — ALGORTHOMUS.EXE: O Eco Azul
 
-Abra `index.html` no navegador ou rode:
+Protótipo web de terror psicológico, exploração e anomalias digitais inspirado no conceito de Mundo Torajo / Algorithomus. É um projeto de fã, não oficial.
+
+### Executar o protótipo
 
 ```bash
 npm start
 ```
 
-Acesse `http://localhost:8080`.
+Abra `http://localhost:8080`.
 
-- **WASD** ou **setas**: caminhar
-- **E**: interagir com objetos próximos
-- **Enter** / clique: avançar diálogos
-- Em celulares, use os botões exibidos na tela.
+| Ação | Computador | Toque |
+| --- | --- | --- |
+| Movimento | `WASD` ou setas | botões ← e → |
+| Interação | `E` | botão E |
+| Avançar diálogo | `Enter` ou clique | botão na tela |
 
-Explore a cidade de Verade, encontre o espelho, reúna os três Ecos Azuis, desperte o Núcleo Azul e escolha se continuará além da simulação. A documentação das mecânicas está em [`docs/MECANICAS.md`](docs/MECANICAS.md).
+O prólogo conduz o jogador pela cidade de Verade: espelho `0x7` → três Ecos Azuis → Núcleo Azul → Protocolo Espelho. Consulte [`docs/MECANICAS.md`](docs/MECANICAS.md) para detalhes da versão implementada.
+
+## Documentação do projeto
+
+- `ARENA_AI.md` — orientações de desenvolvimento e qualidade.
+- `PROJETO.txt` — escopo geral do repositório.
+- `GAME_ARCHITECTURE.md` — arquitetura técnica modular.
+- `GAMEPLAY_SYSTEMS.md` — sistemas de gameplay planejados.
+- `NARRATIVE_FLOW.md` — estrutura e fluxo narrativo.
+- `AI_DESIGN.md` — desenho de comportamentos de IA.
+- `LEVEL_DESIGN.md` — áreas e progressão de níveis.
+- `UI_UX.md` — diretrizes de interface e experiência.
+- `AUDIO_DESIGN.md` — sistema e diretrizes de áudio.
+- `SAVE_SYSTEM.md` — persistência e checkpoints.
+- `ENTITY_DATABASE.md` — modelo de documentação de entidades.
+
+## Organização prevista
+
+```text
+src/       código modular
+assets/    imagens, áudio e modelos
+docs/      mecânicas e documentação complementar
+builds/    versões exportadas
+notes/     anotações de desenvolvimento
+```
+
+## Padrão de commits
+
+`feat:` funcionalidade · `fix:` correção · `docs:` documentação · `refactor:` organização de código · `assets:` recursos gráficos/sonoros · `chore:` manutenção.
