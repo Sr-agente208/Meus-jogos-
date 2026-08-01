@@ -117,7 +117,7 @@ Se você é o Arena IA e vai continuar este projeto:
 3. Prefira commits pequenos e com propósito claro.
 4. Separe documentação, código e assets.
 5. Não sobrescreva arquivos importantes sem necessidade.
-6. Mantha nomes consistentes de pastas e arquivos.
+6. Mantenha nomes consistentes de pastas e arquivos.
 7. Quando adicionar uma função nova, atualize a documentação junto.
 
 ## Prioridades atuais
