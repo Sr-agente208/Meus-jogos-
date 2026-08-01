@@ -1,0 +1,51 @@
+MEUS-JOGOS-
+
+Resumo do projeto
+-----------------
+Este repositório funciona como base para concentrar projetos, ideias e documentação de jogos e experiências interativas.
+
+Objetivo
+--------
+Organizar em um só lugar:
+- conceitos de jogos
+- roteiros e GDD
+- anotações técnicas
+- documentação de versões
+- referências visuais e mecânicas
+
+Estrutura sugerida
+------------------
+- README.md
+- PROJETO.txt
+- docs/
+- assets/
+- src/
+- build/
+- notes/
+
+Diretrizes de organização
+-------------------------
+- manter arquivos com nomes claros
+- separar documentação de código
+- registrar mudanças importantes em commits pequenos
+- evitar misturar testes com versão final
+
+Projetos e temas relacionados
+-----------------------------
+- Pokédex
+- protótipos de UI e interface
+- ideias de terror e suspense
+- jogos inspirados em franquias conhecidas
+- documentação de histórias, fases e mecânicas
+
+Boas práticas de commit
+----------------------
+- docs: adiciona documentação inicial
+- docs: organiza resumo do projeto
+- chore: ajusta estrutura base
+- feat: adiciona nova função
+- fix: corrige comportamento
+
+Observações
+-----------
+Este arquivo serve como base viva do projeto. Conforme novas ideias entrarem, a documentação pode ser ampliada por tema ou por pasta.
