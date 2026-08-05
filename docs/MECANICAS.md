@@ -20,6 +20,7 @@
 - **C.O.R.**: indicador de corrupção atualizado por eventos da narrativa.
 - **BPM**: representação visual de tensão vinculada à corrupção.
 - **Ecos**: colecionáveis necessários para liberar o Núcleo Azul.
+- **Documento / inventário**: o Registro `DOC_001 · SJM-07` é coletável, fica acessível por **PAUSA → ARQUIVOS / INVENTÁRIO** e oferece uma pista de lore ligada ao Protocolo Espelho. O estado do documento é persistido no save.
 - **Eventos de interface**: mensagens aleatórias do sistema e efeitos glitch.
 - **Final ramificado**: aceitar ou recusar o Protocolo Espelho altera a mensagem final.
 - **Pausa e configurações**: `Esc` ou o botão PAUSA abre o menu para continuar, ajustar brilho/volume, salvar ou apagar o save local.
