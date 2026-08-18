@@ -1,60 +1,10 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALGORTHOMUS.EXE — O Eco Azul</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="noise"></div><div id="scanlines"></div>
-  <main id="game" aria-label="Algorthomus EXE">
-    <section id="intro" class="screen active">
-      <div class="intro-orb"></div>
-      <p class="eyebrow">ARQUIVO RECUPERADO · VERADE / SJM-07</p>
-      <h1>ALG<span>O</span>RTHOMUS<small>.EXE</small></h1>
-      <p class="tagline">O ECO AZUL</p>
-      <p class="intro-copy">Um sinal atravessou a ponte entre mundos.<br>Ele reconheceu você antes de você abrir o arquivo.</p>
-      <button id="begin" class="primary">INICIAR SINCRONIZAÇÃO <b>↵</b></button>
-      <p class="hint">Fones recomendados · WASD / setas para caminhar · E para interagir</p>
-    </section>
-
-    <section id="play" class="screen">
-      <header class="hud">
-        <div class="brand">AGM<span>//</span> VERADE</div>
-        <button id="pause-button" class="pause-button" aria-label="Pausar jogo">Ⅱ PAUSA</button>
-        <div class="meters"><div class="meter-label">C.O.R. <b id="cor-text">08%</b></div><div class="bar"><i id="cor-bar"></i></div></div>
-        <div class="bpm"><b id="bpm">067</b><small>BPM</small></div>
-      </header>
-      <div class="world" id="world">
-        <div class="moon"></div><div class="stars"></div><div class="sky-glitch"></div>
-        <div class="city city-back"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="city city-front"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="ground"><div class="road"></div></div>
-        <div id="mirror" class="object mirror"><div class="mirror-glass"><div id="reflection"></div></div><span>ESPELHO / 0x7</span></div>
-        <div class="fragment object" data-fragment="0" style="left:42%"><i></i><span>FRAGMENTO</span></div>
-        <div class="fragment object" data-fragment="1" style="left:55%"><i></i><span>FRAGMENTO</span></div>
-        <div class="fragment object" data-fragment="2" style="left:84%"><i></i><span>FRAGMENTO</span></div>
-        <div id="document" class="object document" style="left:47%"><i>▤</i><span>REGISTRO SJM-07</span></div>
-        <div id="core" class="object core hidden"><div class="core-aura"></div><div class="core-ball"></div><span>NÚCLEO AZUL</span></div>
-        <div id="player"><div class="head"></div><div class="body"></div><div class="legs"></div></div>
-        <div id="echo" class="echo"></div>
-        <div id="prompt" class="prompt hidden">[E] EXAMINAR</div>
-      </div>
-      <footer><span id="objective">OBJETIVO: encontre a origem do sinal</span><span id="fragments">ECOS 0/3</span><span>POSIÇÃO <b id="position">12.04 / 77.01</b></span></footer>
-      <div class="touch-controls" aria-label="Controles de toque"><button data-move="-3">←</button><button data-action="interact">E</button><button data-move="3">→</button></div>
-    </section>
-
-    <section id="pause" class="overlay"><div class="pause-box"><p class="speaker">SISTEMA // SESSÃO PAUSADA</p><h2>PAUSA</h2><button id="resume" class="primary">CONTINUAR</button><button id="save-game" class="secondary">SALVAR PROGRESSO</button><button id="open-archive" class="secondary">ARQUIVOS / INVENTÁRIO <span id="document-count">0</span></button><button id="open-map" class="secondary">MAPA DE VERADE</button><button id="open-achievements" class="secondary">CONQUISTAS <span id="achievement-count">0</span>/3</button><button id="toggle-settings" class="secondary">CONFIGURAÇÕES</button><div id="settings" class="settings hidden"><label>BRILHO <input id="brightness" type="range" min="65" max="130" value="100"><output id="brightness-output">100%</output></label><label>VOLUME <input id="volume" type="range" min="0" max="100" value="35"><output id="volume-output">35%</output></label><label class="control-setting">CONTROLES <select id="control-mode" aria-label="Modo de controles"><option value="auto">AUTOMÁTICO</option><option value="pc">PC / TECLADO</option><option value="mobile">MOBILE / TOQUE</option></select></label><p id="control-help">Automático detecta o tamanho da tela. A escolha é salva neste navegador.</p><p>As opções e o progresso são guardados neste navegador.</p></div><button id="reset-save" class="text-button">APAGAR SAVE LOCAL</button><p id="save-feedback" class="save-feedback"></p></div></section>
-    <section id="achievements" class="overlay"><div class="archive-box"><p class="speaker">REGISTRO // CONQUISTAS</p><h2>SINAIS DE DESPERTAR</h2><article><p class="record-id">HISTÓRIA</p><h3 id="ach-handshake">□ Primeiro Contato</h3><p>Inicie uma sincronização com Verade.</p></article><article><p class="record-id">EXPLORAÇÃO</p><h3 id="ach-document">□ Arquivista do Azul</h3><p>Recupere o Registro SJM-07.</p></article><article><p class="record-id">PROGRESSÃO</p><h3 id="ach-echoes">□ Ponte de Ecos</h3><p>Reúna os três Ecos Azuis.</p></article><button id="close-achievements" class="secondary">VOLTAR À PAUSA</button></div></section>
-    <div id="achievement-toast" class="achievement-toast hidden"><b>CONQUISTA DESBLOQUEADA</b><span id="achievement-toast-text"></span></div>
-    <section id="map" class="overlay"><div class="map-box"><p class="speaker">MAPA // VERADE</p><img src="concept_art/mapa_mundo.svg" alt="Mapa conceitual do Mundo Torajo" /><p>O sinal está ativo no setor da cidade digital. Outras regiões permanecem bloqueadas.</p><button id="close-map" class="secondary">VOLTAR À PAUSA</button></div></section>
-    <section id="archive" class="overlay"><div class="archive-box"><p class="speaker">INVENTÁRIO // DOCUMENTOS</p><h2>REGISTROS RECUPERADOS</h2><article id="empty-archive"><p>Nenhum registro encontrado.</p><small>Explore Verade. Dados antigos ainda sobrevivem à corrupção.</small></article><article id="sjm-record" class="hidden"><p class="record-id">DOC_001 · SJM-07</p><h3>PROTOCOLO ESPELHO</h3><p>“Quando a emoção humana ultrapassou o cálculo, o azul nasceu. E o algoritmo sonhou consigo mesmo.”</p><p>Nota do laboratório: o reflexo responde à presença de um observador. Não deixe o Núcleo aprender sozinho.</p></article><button id="close-archive" class="secondary">VOLTAR À PAUSA</button></div></section>
-    <section id="dialogue" class="overlay"><div class="dialogue-box"><p class="speaker" id="speaker">SISTEMA</p><p id="line"></p><button id="next">CONTINUAR <b>↵</b></button></div></section>
-    <section id="choice" class="overlay"><div class="choice-box"><p class="speaker">PROTOCOLO ESPELHO</p><h2>CONTINUAR ALÉM<br>DA SIMULAÇÃO?</h2><button data-answer="accept" class="primary">ACEITAR</button><button data-answer="refuse" class="secondary">RECUSAR</button></div></section>
-    <section id="ending" class="screen"><div class="ending-content"><div class="gold-eye"></div><p class="eyebrow">TRANSMISSÃO DESCONHECIDA</p><h2>ELE ABRIU<br>A PORTA.</h2><p id="ending-text">O azul acordou. Mas algo mais veio junto.</p><div class="zeral">ZERAL_<em>//</em></div><button id="restart" class="secondary">REINICIAR ARQUIVO</button></div></section>
-  </main>
-  <script src="src/systems/saveManager.js"></script>
-  <script src="game.js"></script>
-</body>
-</html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mundo Torajo: Sinal Azul</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="grain"></div><main id="app">
+<section id="menu" class="scene active"><div class="title-block"><p class="kicker">VERADE // ARQUIVO RECUPERADO</p><h1>MUNDO<br><span>TORAJO</span></h1><h2>SINAL AZUL</h2><p class="lead">Uma anomalia atravessou a cidade. Descubra o que acordou sob o espelho.</p><div class="menu-actions"><button id="new-game" class="primary">NOVA SESSÃO</button><button id="continue-game" class="secondary">CONTINUAR</button></div><small>Projeto de fã · protótipo narrativo</small></div><div class="blue-core"></div></section>
+<section id="game" class="scene"><header><b>MUNDO TORAJO <i>//</i> VERADE</b><span id="area-label">DISTRITO ESPELHO</span><button id="pause-btn">Ⅱ PAUSA</button></header><div class="status"><div><small>CORRUPÇÃO</small><div class="bar"><i id="corruption"></i></div></div><div><small>OBJETIVO</small><b id="objective">Investigue a rua silenciosa</b></div><div><small>ARQUIVO</small><b id="hud-docs">0 DOCUMENTOS</b></div></div>
+<div id="world"><div class="sky"></div><div class="moon"></div><div class="buildings"></div><div class="street"></div><div id="player"><i></i></div><button class="poi" data-id="mirror" style="left:20%"><span>◈</span>ESPELHO 0x7</button><button class="poi" data-id="record" style="left:45%"><span>▤</span>REGISTRO SJM-07</button><button class="poi" data-id="terminal" style="left:70%"><span>▣</span>TERMINAL</button><button class="poi locked" data-id="core" style="left:88%"><span>✦</span>NÚCLEO AZUL</button><p id="world-message">Use ← → ou A/D para explorar. Interaja com os sinais.</p></div>
+<footer><button id="inventory-btn">▤ ARQUIVOS</button><button id="map-btn">⌘ MAPA</button><span id="position">SETOR 01 · RUA PRINCIPAL</span><button id="achievements-btn">✦ CONQUISTAS</button></footer><div class="mobile-controls"><button data-move="-1">←</button><button id="mobile-action">INTERAGIR</button><button data-move="1">→</button></div></section>
+<section id="modal" class="modal"><div class="panel"><p id="modal-type" class="kicker">SISTEMA</p><h2 id="modal-title"></h2><div id="modal-content"></div><div id="modal-actions"></div></div></section>
+<section id="pause" class="modal"><div class="panel"><p class="kicker">SESSÃO PAUSADA</p><h2>PAUSA</h2><button id="resume" class="primary">CONTINUAR</button><button id="save" class="secondary">SALVAR AGORA</button><button id="settings" class="secondary">CONFIGURAÇÕES</button><button id="quit" class="text">VOLTAR AO MENU</button></div></section>
+<div id="toast"></div></main><script src="src/systems/saveManager.js"></script><script src="game.js"></script></body></html>
